@@ -1,0 +1,24 @@
+name: Ci
+on :
+  pull_request : 
+jobs:
+        build:
+          runs-on: ubuntu-latest
+          steps : 
+            - name: print Hello 
+              run: echo "Hello  world" 
+            
+            - name : copy code on the machine 
+              uses:  actions/checkout@v4
+
+            - name: setups python 
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.12"
+
+                
+            - name : copy requriments 
+              run : pip install -r  requriments.txt
+
+            - name :  run test 
+              run :  python -m pytest -v  
