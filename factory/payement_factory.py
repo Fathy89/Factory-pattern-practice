@@ -36,12 +36,19 @@ class StripePayment(payment_factory):
         return f"This paid {amount} using StripePayment"
     
 
+class ApplePayment(payment_factory):
+    def __init__(self):
+        super().__init__()
+        
+    def pay(self, amount):
+        return f"This paid {amount} using ApplePayment"
 class PaymentFactory:
 
     _payments = {
         "paypal": PayPal,
         "credit_card": CreditCard,
         "stripe": StripePayment,
+        "apple" :ApplePayment
     }
 
     @staticmethod
