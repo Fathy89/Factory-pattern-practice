@@ -18,7 +18,7 @@ jobs:
 
                 
             - name : copy requriments 
-              run : pip install -r  requriments.txt
+              run : pip install -r  requirments.txt
 
             - name :  run test 
               run :  python -m pytest -v  
